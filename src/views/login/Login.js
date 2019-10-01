@@ -89,6 +89,7 @@ const Login = props => {
   const checkValidation = () => {
     if (!email) {
       setEmailError("Email required");
+      // eslint-disable-next-line
     } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/.test(email)) {
       setEmailError("Please use valid email address");
     }
@@ -96,6 +97,7 @@ const Login = props => {
     if (!password) {
       setPasswordError("Password required");
     } else if (
+      // eslint-disable-next-line
       !/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password)
     ) {
       setPasswordError("Please use strong password");
