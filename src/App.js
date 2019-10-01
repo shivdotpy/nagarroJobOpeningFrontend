@@ -3,13 +3,15 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import "./App.css";
-
-import purple from "@material-ui/core/colors/purple";
-import green from "@material-ui/core/colors/green";
+import Alert from "react-s-alert";
+import "react-s-alert/dist/s-alert-default.css";
+import "react-s-alert/dist/s-alert-css-effects/genie.css";
+import "react-s-alert/dist/s-alert-css-effects/bouncyflip.css";
 
 // Components
 import Login from "./views/login/Login";
 import Signup from "./views/signup/Signup";
+import Dashboard from "./views/dashboard/Dashboard";
 
 const theme = createMuiTheme({
   palette: {
@@ -27,7 +29,9 @@ function App() {
       <Router>
         <Route path="/" exact component={Login} />
         <Route path="/signup" exact component={Signup} />
+        <Route path="/dashboard" exatc component={Dashboard} />
       </Router>
+      <Alert stack={{ limit: 1 }} />
     </ThemeProvider>
   );
 }
